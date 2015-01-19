@@ -15,7 +15,7 @@
        # The target "download-ivy" and "install-ivy" will download the ivy jar and place it in the "ivy" folder
        # 
 -->
-<project name="FacebookService" default="compile" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="PhraseService" default="compile" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
 
 	<!-- PART 1: Ivy properties, download, installation and configuration -->
 	<property name="ivy.install.version" value="2.4.0-rc1" />
@@ -111,15 +111,11 @@
 				<include name="*.xml" />
 			</fileset>
 		</copy>
-		<ivy:makepom ivyfile="${basedir}/ivy.xml" pomfile="${basedir}/module.pom">
-	   		<mapping conf="default" scope="compile"/>
-	   		<mapping conf="runtime" scope="runtime"/>
-		</ivy:makepom>
 	</target>
 
 	<target name="execute">
-		<echo message="Executing Facebook Service" />
-		<java classname="project.App" classpath="build" fork="true">
+		<echo message="Executing Phrase Service" />
+		<java classname="project.phrase.App" classpath="build" fork="true">
 			<classpath>
 				<fileset dir="${lib.dir}">
 					<include name="**/*.jar" />
