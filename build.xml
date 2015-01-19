@@ -111,6 +111,10 @@
 				<include name="*.xml" />
 			</fileset>
 		</copy>
+		<ivy:makepom ivyfile="${basedir}/ivy.xml" pomfile="${basedir}/module.pom">
+	   		<mapping conf="default" scope="compile"/>
+	   		<mapping conf="runtime" scope="runtime"/>
+		</ivy:makepom>
 	</target>
 
 	<target name="execute">
