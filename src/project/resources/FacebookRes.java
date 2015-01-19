@@ -38,10 +38,11 @@ public class FacebookRes {
 	
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON})
-	public JSONObject getUserToken(@QueryParam("token") String token)
+	public String getUserToken(@QueryParam("token") String token)
 			throws MalformedURLException, JSONException, IOException {
 		
 		FacebookService fs = new FacebookService();
-		return fs.getInfoByToken(token);
+		JSONObject a = fs.getInfoByToken(token);
+		return a.toString();
 	}
 }

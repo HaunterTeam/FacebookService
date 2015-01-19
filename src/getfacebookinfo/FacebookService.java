@@ -52,7 +52,7 @@ public class FacebookService {
         		(json_in.getJSONObject(Settings.FB_JSON_IN_LOCATION_OBJ)
         				.getString(Settings.FB_JSON_IN_LOCATION_ATTR)));
         
-        System.err.println(json_out);
+        //System.err.println(json_out);
         return json_out;
     }
     
