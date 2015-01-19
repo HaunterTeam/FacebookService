@@ -1,5 +1,6 @@
 package project.resources;
 
+
 import getfacebookinfo.FacebookService;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
@@ -29,13 +31,17 @@ public class FacebookRes {
 	public String getFacebookProfile(@QueryParam("token") String token,
 			@QueryParam("callback") String callback) 
 			throws MalformedURLException, JSONException, IOException {
-		
-//		System.out.println("here");
-//		System.out.println("callback=" + callback);
-//		System.out.println("token=" + token);
             
             FacebookService fs = new FacebookService();
-//            System.err.println(fs.authenticateUser(token).toString());
             return callback + "(" + fs.authenticateUser(token) + ")";
+	}
+	
+	@GET
+	@Produces({ MediaType.APPLICATION_JSON})
+	public JSONObject getUserToken(@QueryParam("token") String token)
+			throws MalformedURLException, JSONException, IOException {
+		
+		FacebookService fs = new FacebookService();
+		return fs.getInfoByToken(token);
 	}
 }
