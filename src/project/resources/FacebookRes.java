@@ -26,15 +26,15 @@ public class FacebookRes {
 	@Context
 	Request request;
 	
-	@GET
-	@Produces({"application/javascript"})
-	public String getFacebookProfile(@QueryParam("token") String token,
-			@QueryParam("callback") String callback) 
-			throws MalformedURLException, JSONException, IOException {
-            
-            FacebookService fs = new FacebookService();
-            return callback + "(" + fs.authenticateUser(token) + ")";
-	}
+//	@GET
+//	@Produces({"application/javascript"})
+//	public String getFacebookProfile(@QueryParam("token") String token,
+//			@QueryParam("callback") String callback) 
+//			throws MalformedURLException, JSONException, IOException {
+//            
+//            FacebookService fs = new FacebookService();
+//            return callback + "(" + fs.authenticateUser(token) + ")";
+//	}
 	
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON})
