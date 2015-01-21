@@ -174,8 +174,8 @@
     <directory>target</directory>
     <outputDirectory>target/classes</outputDirectory>
     <finalName>${artifactId}-${version}</finalName>
-    <sourceDirectory>src/project</sourceDirectory>
-    <scriptSourceDirectory>src/project</scriptSourceDirectory>
+    <sourceDirectory>src/</sourceDirectory>
+    <scriptSourceDirectory>src</scriptSourceDirectory>
     <resources>
       <resource>
         <directory>src</directory>
