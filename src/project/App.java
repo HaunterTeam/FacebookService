@@ -25,13 +25,13 @@ public class App
         }
 
         URI baseUrl = new URI(protocol + hostname + ":" + port + path);
-        System.out.println("Starting sdelab standalone HTTP server..");
+        System.out.println("Starting standalone HTTP server..");
         JdkHttpServerFactory.createHttpServer(baseUrl, createApp());
         System.out.println("server starts on " + baseUrl + "\n [kill the process to exit]");
     }
 
     public static ResourceConfig createApp() {
-    	System.out.println("Starting SDE assignment REST services..");
+    	System.out.println("Starting Facebook Service..");
         return new MyApplicationConfig();
     }
 }
