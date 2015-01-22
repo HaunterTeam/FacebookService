@@ -29,8 +29,12 @@ public final class Settings {
     public static final String FB_JSON_OUT_ID_ATTR = "id";
     public static final String FB_JSON_OUT_NAME_ATTR = "first_name";
     public static final String FB_JSON_OUT_LOCATION_ATTR = "location";
-    public static final String FB_JSON_OUT_INFO_OBJ = "info";
-    public static final String FB_JSON_OUT_IMAGE_OBJ = "image";
+    public static final String FB_JSON_OUT_STATUS_OBJ = "status";
+    public static final String FB_JSON_OUT_STATUS_CODE_ATTR = "code";
+    public static final String FB_JSON_OUT_STATUS_MESSAGE_ATTR = "message";
     
-    public static final String FB_JSON_OUT_IMAGE_URL_ATTR = "image_url";
+    public final static int FB_OK_REQ = 200;
+    public final static int FB_ERR_REQ = 1;
+    public final static String FB_OK_MESSAGE = "Valid Request";
+    public final static String FB_ERR_MESSAGE = "Invalid OAuth access token";
 }
