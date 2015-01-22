@@ -1,6 +1,7 @@
 package project.resources;
 
 
+import beans.ErrorRaise;
 import getfacebookinfo.FacebookService;
 
 import java.io.IOException;
@@ -41,8 +42,22 @@ public class FacebookRes {
 	public String getUserToken(@QueryParam("token") String token)
 			throws MalformedURLException, JSONException, IOException {
 		
-		FacebookService fs = new FacebookService();
-		JSONObject a = fs.getInfoByToken(token);
+            FacebookService fs = new FacebookService();
+            JSONObject a = new JSONObject();
+            ErrorRaise err = null;
+            try {
+                JSONObject obj = fs.getInfoByToken(token);
+                a = obj;
+                err = new ErrorRaise(ErrorRaise.GOOD_REQ,ErrorRaise.GOOD_MESSAGE );
+                JSONObject es = new JSONObject(err);
+                a.put("status", es);
+            } catch (Exception e) {
+                e.printStackTrace();
+                err = new ErrorRaise(ErrorRaise.BAD_REQ,ErrorRaise.BAD_MESSAGE);
+                JSONObject es = new JSONObject(err);
+                a.put("status", es);
+            }
+                
 		return a.toString();
 	}
 }
