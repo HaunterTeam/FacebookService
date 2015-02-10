@@ -26,7 +26,13 @@ Response in case the token is valid:
 
 Response in case the token is not valid:
 ```
-{"status":{"message":"Invalid OAuth access token","code":1}}
+{
+	"status":
+	{
+		"message" : "Invalid OAuth access token",
+		"code" : 1
+	}
+}
 ```
 
 Contributors: [Roberto Zen](https://github.com/robzenn92) 100%
