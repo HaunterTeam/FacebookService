@@ -13,16 +13,9 @@ public class App
     public static void main(String[] args) throws IllegalArgumentException, IOException, URISyntaxException
     {
         String protocol = Settings.BASE_PROTOCOL;
-        String port = System.getenv("PORT");
-        if (port == null || port.isEmpty()) {
-            port = Settings.BASE_PORT;
-        }
-        String hostname = InetAddress.getLocalHost().getHostAddress();
+        String port = Settings.BASE_PORT;
+        String hostname = Settings.BASE_URL;
         String path = Settings.SERVICE_PATH;
-        if (hostname.equals(Settings.BASE_URL))
-        {
-            hostname = "localhost";
-        }
 
         URI baseUrl = new URI(protocol + hostname + ":" + port + path);
         System.out.println("Starting standalone HTTP server..");
